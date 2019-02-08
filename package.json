@@ -1,0 +1,10 @@
+{
+  "name": "node-chat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eder Ramírez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.14.0"
+  }
+}
