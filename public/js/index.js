@@ -9,16 +9,18 @@ socket.on('disconnect', function () {
 });
 
 socket.on('newMessage', function (message) {
+    var formattedTime = moment(message.createdAt).format('h:mm a');
     console.log('New message', message);
     var li = document.createElement("LI");
-    li.innerText = `${message.from}: ${message.text}`;
+    li.innerText = `${message.from} ${formattedTime}: ${message.text}`;
 
     document.getElementById('messages').appendChild(li);
 });
 
 socket.on('newLocationMessage', function (message) {
+    var formattedTime = moment(message.createdAt).format('h:mm a');
     var li = document.createElement("LI");
-    li.innerHTML = `${message.from}: `;
+    li.innerHTML = `${message.from} ${formattedTime}: `;
 
     var a = document.createElement("a");
     a.text = "My current value";
