@@ -4,14 +4,19 @@ class Users {
     }
 
     addUser (id, name, room) {
-        var user = { id, name, room };
+        let user = { id, name, room };
         this.users.push(user);
         return user;
     }
 
     removeUser (id) {
-        let users = this.users.filter((user) => user.id !== id);
-        this.users = users;
+        let user = this.getUser(id);
+
+        if (user) {
+          this.users = this.users.filter((user) => user.id !== id);
+        }
+    
+        return user;
     }
 
     getUser (id) {
