@@ -17,9 +17,17 @@
                 <label for="">Display name</label>
                 <input type="text" name="name" autofocus/>
             </div>
-            <div class="form-field">
+            <div id="form-select-room" class="form-field">
+                <label>Room</label>
+                <select id="rooms">
+                </select>
+            </div>
+            <div style="text-align: center; cursor: pointer; margin-top:0px;">
+                <a id="create-room" style="color:rgb(80, 96, 141); margin-top:0px; font-size: 13px;">Create new room</a>
+            </div >
+            <div id="form-create-room" class="form-field" style="display:none">
                 <label for="">Room name</label>
-                <input type="text" name="room"/>
+                <input id="room" type="text" name="room"/>
             </div>
             <div class="form-field">
                 <button>Join</button>
@@ -27,5 +35,8 @@
 
         </form>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
